@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://dragonir.github.io/h5-scan-qrcode",
   "engines": {
-    "node": "<14.18.0"
+    "node": "14.18.0"
   },
   "scripts": {
     "start": "vue-cli-service serve",
