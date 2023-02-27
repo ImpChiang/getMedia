@@ -127,6 +127,7 @@ export default {
         this.canvas.drawImage(this.$refs.video, 0, 0, this.$refs.canvas.width, this.$refs.canvas.height);
         const imageData = this.canvas.getImageData(0, 0, this.$refs.canvas.width, this.$refs.canvas.height);
         const dataurl = this.$refs.canvas.toDataURL('image/gif', 0.8)
+        console.log(dataurl)
         console.log(this.dataurlToFile(dataurl, 'hahfjkeugdfhf22222'))
         
         let code = false;
@@ -218,7 +219,7 @@ export default {
       while(n--) {
         u8arr[n] = bstr.charCodeAt(n)
       }    
-      return new File([u8arr], filename, {type:mime})
+      return new File([u8arr], filename, {type:'image/gif'})
     }
   },
   mounted () {
