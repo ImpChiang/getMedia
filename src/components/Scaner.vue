@@ -126,6 +126,7 @@ export default {
         this.$refs.canvas.width = this.videoWH.width;
         this.canvas.drawImage(this.$refs.video, 0, 0, this.$refs.canvas.width, this.$refs.canvas.height);
         const imageData = this.canvas.getImageData(0, 0, this.$refs.canvas.width, this.$refs.canvas.height);
+        console.log(this.$refs.canvas.toDataURL('image/gif', 0.8))
         let code = false;
         try {
           code = jsQR(imageData.data, imageData.width, imageData.height);
