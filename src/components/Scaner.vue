@@ -214,6 +214,7 @@ export default {
           bstr = atob(arr[1]),
           n = bstr.length,
           u8arr = new Unit8Array(n)
+          
       while(n--) {
         u8arr[n] = bstr.charCodeAt(n)
       }    
