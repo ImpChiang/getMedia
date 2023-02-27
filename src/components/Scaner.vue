@@ -126,7 +126,9 @@ export default {
         this.$refs.canvas.width = this.videoWH.width;
         this.canvas.drawImage(this.$refs.video, 0, 0, this.$refs.canvas.width, this.$refs.canvas.height);
         const imageData = this.canvas.getImageData(0, 0, this.$refs.canvas.width, this.$refs.canvas.height);
-        console.log(this.$refs.canvas.toDataURL('image/gif', 0.8))
+        const dataurl = this.$refs.canvas.toDataURL('image/gif', 0.8)
+        console.log(this.dataurlToFile(dataurl, 'hahfjkeugdfhf22222'))
+        
         let code = false;
         try {
           code = jsQR(imageData.data, imageData.width, imageData.height);
@@ -205,6 +207,17 @@ export default {
       if (this.$refs.video && this.$refs.video.srcObject) {
         this.$refs.video.srcObject.getTracks().forEach(t => t.stop());
       }
+    },
+    dataurlToFile (dataurl, filename) {
+      var arr = dataurl.split(','),
+          mime = arr[0].match(/:(.*?);/)[1],
+          bstr = atob(arr[1]),
+          n = bstr.length,
+          u8arr = new Unit8Array(n)
+      while(n--) {
+        u8arr[n] = bstr.charCodeAt(n)
+      }    
+      return new File([u8arr], filename, {type:mime})
     }
   },
   mounted () {
