@@ -39,18 +39,18 @@ export default {
         this.video.width = this.windowWidth
         this.video.height = this.windowHeight
 
-        const canvas = document.createElement('canvas')
-        this.canvas = canvas
-        canvas.id = 'canvas'
-        canvas.width = this.windowWidth
-        canvas.height = this.windowHeight
-        canvas.style = 'position: fixed;top: 0;left: 0;z-index:10;'
-        this.canvas2d = canvas.getContext('2d')
+        // const canvas = document.createElement('canvas')
+        // this.canvas = canvas
+        // canvas.id = 'canvas'
+        // canvas.width = this.windowWidth
+        // canvas.height = this.windowHeight
+        // canvas.style = 'position: fixed;top: 0;left: 0;z-index:10;'
+        // this.canvas2d = canvas.getContext('2d')
 
         // 设置当前宽高 满屏
         const canvasBox = document.querySelector('.canvasBox')
         canvasBox.append(this.video)
-        canvasBox.append(canvas)
+        // canvasBox.append(canvas)
         canvasBox.style = `width:${this.windowWidth}px;height:${this.windowHeight}px;`
 
         const cameraCanvas = document.createElement('canvas')
@@ -59,7 +59,7 @@ export default {
         cameraCanvas.width = this.windowWidth
         cameraCanvas.height = this.windowHeight
         cameraCanvas.style = 'display:none;'
-        canvasBox.append(canvas)
+        // canvasBox.append(canvas)
         this.cameraCanvas2d = cameraCanvas.getContext('2d')
 
         this.openScan()
@@ -94,7 +94,7 @@ export default {
       })
     },
     transtion(number) {
-      return number * 2
+      return number * 1
     },
     closeCamera() {
       if (this.video.srcObject) {
