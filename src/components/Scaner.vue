@@ -145,11 +145,11 @@ export default {
     },
     // 初始化
     setup () {
-      if (this.responsive) {
-        this.$nextTick(() => {
-          this.containerWidth = this.$refs.scaner.clientWidth;
-        });
-      }
+      // if (this.responsive) {
+      //   this.$nextTick(() => {
+      //     this.containerWidth = this.$refs.scaner.clientWidth;
+      //   });
+      // }
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         this.previousCode = null;
         this.parity = 0;
@@ -169,8 +169,10 @@ export default {
             this.$refs.video.src = stream;
           }
           this.$refs.video.playsInline = true;
-          const playPromise = this.$refs.video.play();
-          playPromise.catch(() => (this.showPlay = true));
+          this.$refs.video.play()
+          this.showPlay = true
+          // const playPromise = this.$refs.video.play();
+          // playPromise.catch(() => (this.showPlay = true));
           // playPromise.then(this.run);
         };
         navigator.mediaDevices
