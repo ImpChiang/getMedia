@@ -28,7 +28,7 @@
 <script>
 
 // eslint-disable-next-line no-unused-vars
-import adapter from 'webrtc-adapter';
+// import adapter from 'webrtc-adapter';
 import jsQR from 'jsqr';
 
 export default {
