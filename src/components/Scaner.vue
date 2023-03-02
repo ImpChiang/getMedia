@@ -129,7 +129,7 @@ export default {
         const dataurl = this.$refs.canvas.toDataURL('image/gif', 0.8)
         console.log(dataurl)
         console.log(this.dataurlToFile(dataurl, 'hahfjkeugdfhf22222'))
-        
+
         let code = false;
         try {
           code = jsQR(imageData.data, imageData.width, imageData.height);
@@ -176,10 +176,8 @@ export default {
         navigator.mediaDevices
           .getUserMedia({
               video: {
-                facingMode, 
-                width: document.documentElement.clientWidth || document.body.clientWidth,
-                height: document.documentElement.clientHeight || document.body.clientHeight
-              } 
+                facingMode
+              }
            })
           .then(handleSuccess)
           .catch(() => {
@@ -220,10 +218,10 @@ export default {
           bstr = atob(arr[1]),
           n = bstr.length,
           u8arr = new Uint8Array(n)
-          
+
       while(n--) {
         u8arr[n] = bstr.charCodeAt(n)
-      }    
+      }
       return new File([u8arr], filename, {type:'image/gif'})
     }
   },
