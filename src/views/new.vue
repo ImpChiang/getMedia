@@ -120,8 +120,8 @@ export default {
   transform: translateX(-50%);
 }
 .camera-img{
-  width: 100%;
-  height: 50%;
+  width: 50%;
+  height: auto;
   position: fixed;
   top: 0;
   left: 0;
