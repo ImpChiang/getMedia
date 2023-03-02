@@ -33,7 +33,7 @@ export default {
     initElement () {
       this.windowWidth = document.documentElement.clientWidth || document.body.clientWidth
       this.windowHeight = document.documentElement.clientHeight || document.body.clientHeight
-      console.log(this.windowWidth, this.windowHeight, 'windowWidth--------windowHeight')
+      console.log(this.windowWidth, this.windowHeight, 'windowWidth--------windowHeight', window.innerWidth, window.innerHeight)
       this.$nextTick(() => {
         this.video = document.createElement('video')
         this.video.width = this.windowWidth

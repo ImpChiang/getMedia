@@ -171,7 +171,7 @@ export default {
           this.$refs.video.playsInline = true;
           const playPromise = this.$refs.video.play();
           playPromise.catch(() => (this.showPlay = true));
-          playPromise.then(this.run);
+          // playPromise.then(this.run);
         };
         navigator.mediaDevices
           .getUserMedia({
