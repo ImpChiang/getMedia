@@ -174,7 +174,13 @@ export default {
           playPromise.then(this.run);
         };
         navigator.mediaDevices
-          .getUserMedia({ video: { facingMode } })
+          .getUserMedia({
+              video: {
+                facingMode, 
+                width: document.documentElement.clientWidth || document.body.clientWidth,
+                height: document.documentElement.clientHeight || document.body.clientHeight
+              } 
+           })
           .then(handleSuccess)
           .catch(() => {
             navigator.mediaDevices
