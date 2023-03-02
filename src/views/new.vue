@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="media-wrap">
     <div class="canvasBox"></div>
     <img class="camera-img" :src="userimg" alt="">
     <button class="camera-btn" @click="takePhoto">拍照</button>
@@ -47,11 +47,15 @@ export default {
         // canvas.style = 'position: fixed;top: 0;left: 0;z-index:10;'
         // this.canvas2d = canvas.getContext('2d')
 
+        const videoBox = document.createElement('div')
+        document.querySelector('.media-wrap').append(videoBox)
+        videoBox.append(this.video)
+        videoBox.style = `width:${this.windowWidth}px;height:${this.windowHeight}px;`
         // 设置当前宽高 满屏
-        const canvasBox = document.querySelector('.canvasBox')
-        canvasBox.append(this.video)
-        // canvasBox.append(canvas)
-        canvasBox.style = `width:${this.windowWidth}px;height:${this.windowHeight}px;`
+        // const canvasBox = document.querySelector('.canvasBox')
+        // canvasBox.append(this.video)
+        // // canvasBox.append(canvas)
+        // canvasBox.style = `width:${this.windowWidth}px;height:${this.windowHeight}px;`
 
         // const cameraCanvas = document.createElement('canvas')
         // this.cameraCanvas = cameraCanvas
