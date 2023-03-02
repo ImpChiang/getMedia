@@ -53,14 +53,14 @@ export default {
         // canvasBox.append(canvas)
         canvasBox.style = `width:${this.windowWidth}px;height:${this.windowHeight}px;`
 
-        const cameraCanvas = document.createElement('canvas')
-        this.cameraCanvas = cameraCanvas
-        cameraCanvas.id = 'cameraCanvas'
-        cameraCanvas.width = this.windowWidth
-        cameraCanvas.height = this.windowHeight
-        cameraCanvas.style = 'display:none;'
+        // const cameraCanvas = document.createElement('canvas')
+        // this.cameraCanvas = cameraCanvas
+        // cameraCanvas.id = 'cameraCanvas'
+        // cameraCanvas.width = this.windowWidth
+        // cameraCanvas.height = this.windowHeight
+        // cameraCanvas.style = 'display:none;'
         // canvasBox.append(canvas)
-        this.cameraCanvas2d = cameraCanvas.getContext('2d')
+        // this.cameraCanvas2d = cameraCanvas.getContext('2d')
 
         this.openScan()
       })
