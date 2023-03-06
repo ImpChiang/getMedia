@@ -21,18 +21,19 @@ class MediaDevice {
     init () {
         console.log(this.$width, 'this.$width', this.$height)
         const mediaEleBox = document.createElement('div')
-        this.video = this.mediaVideo()
-        mediaEleBox.append(this.video)
-        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;`
-        this.$ele.append(mediaEleBox)
-        this.cameraCanvas = this.mediaCameraCanvas()
-        this.openScan()
+        this.mediaVideo(mediaEleBox)
+
     }
-    mediaVideo () {
+    mediaVideo (mediaEleBox) {
         const video = document.createElement('video')
         video.width = this.$width
         video.height = this.$height
-        return video
+        this.video = video
+        mediaEleBox.append(this.video)
+        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;`
+        this.$ele.append(mediaEleBox)
+        this.mediaCameraCanvas()
+        this.openScan()
     }
     openScan () {
         const videoParam = {
@@ -60,7 +61,7 @@ class MediaDevice {
         cameraCanvas.height = this.$height
         cameraCanvas.style = 'display:none;'
         this.cameraCanvas2d = cameraCanvas.getContext('2d')
-        return cameraCanvas
+        this.cameraCanvas = cameraCanvas
     }
     closeCamera () {
         if (this.video.srcObject) {
