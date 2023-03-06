@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import mediaService from "../utils/media-service";
 export default {
   data () {
     return {
@@ -27,7 +28,12 @@ export default {
     }
   },
   mounted () {
-    this.initElement()
+    // this.initElement()
+    const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
+      width: document.documentElement.clientWidth || document.body.clientWidth,
+      height: document.documentElement.clientHeight || document.body.clientHeight
+    })
+    console.log(mediaCamera, 'mediaCamera')
   },
   methods: {
     initElement () {
