@@ -32,7 +32,7 @@ class MediaDevice {
         const mediaEleBox = document.createElement('div')
         this.$ele.append(mediaEleBox)
         mediaEleBox.append(video)
-        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;`
+        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;position:fixed;top:0`
         // this.mediaCameraCanvas()
         this.openScan()
     }
