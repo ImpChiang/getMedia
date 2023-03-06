@@ -94,8 +94,8 @@ export default {
       })
     },
     openScan() {
-      let width = this.transtion(this.windowWidth)
-      let height = this.transtion(this.windowHeight)
+      let width = this.transtion(this.windowHeight)
+      let height = this.transtion(this.windowWidth)
       const videoParam = {
         audio: false,
         video: {
