@@ -3,7 +3,7 @@
     <div class="canvasBox"></div>
     <img class="camera-img" :src="userimg" alt="">
     <button class="camera-btn" @click="takePhoto">拍照</button>
-    <button class="camera-btn" @click="changeCamera">切换</button>
+    <button class="" @click="changeCamera">切换</button>
   </div>
 </template>
 

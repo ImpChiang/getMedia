@@ -10,30 +10,29 @@ const mediaDevices = function (element, options) {
 class MediaDevice {
     constructor (cfg) {
         console.log(cfg, 'constructor---cfg')
-        this.video = null
         this.parse(cfg)
     }
     parse (cfg) {
         this.$ele = cfg.element || null
-        this.$width = cfg.width
-        this.$height = cfg.height
+        this.$width = parseInt(cfg.width) ?? (document.documentElement.clientWidth || document.body.clientWidth)
+        this.$height = parseInt(cfg.height) ?? (document.documentElement.clientHeight || document.body.clientHeight)
         this.$exact = cfg.exact ?? 'environment'
         this.init()
     }
     init () {
-        console.log(this.$width, 'this.$width', this.$height)
-        this.mediaVideo()
-    }
-    mediaVideo () {
-        this.video = document.createElement('video')
-        this.video.width = this.$width
-        this.video.height = this.$height
         const mediaEleBox = document.createElement('div')
-        this.$ele.append(mediaEleBox)
+        this.video = this.mediaVideo()
         mediaEleBox.append(this.video)
-        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;position:fixed;top:0;background:aqua;`
+        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;`
+        this.$ele.append(mediaEleBox)
         this.mediaCameraCanvas()
         this.openScan()
+    }
+    mediaVideo () {
+        const video = document.createElement('video')
+        video.width = this.$width
+        video.height = this.$height
+        return video
     }
     openScan () {
         const width = this.transtion(this.$height)
