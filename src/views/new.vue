@@ -28,14 +28,14 @@ export default {
     }
   },
   mounted () {
-    this.initElement()
-    // this.$nextTick(() => {
-    //   const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
-    //     width: document.documentElement.clientWidth || document.body.clientWidth,
-    //     height: document.documentElement.clientHeight || document.body.clientHeight
-    //   })
-    //   console.log(mediaCamera, 'mediaCamera')
-    // })
+    // this.initElement()
+    this.$nextTick(() => {
+      const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
+        width: document.documentElement.clientWidth || document.body.clientWidth,
+        height: document.documentElement.clientHeight || document.body.clientHeight
+      })
+      console.log(mediaCamera, 'mediaCamera')
+    })
   },
   methods: {
     initElement () {
