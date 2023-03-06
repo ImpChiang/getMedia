@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import mediaService from "../utils/media-service";
+import mediaDevices from "../utils/media-service";
 export default {
   data () {
     return {
