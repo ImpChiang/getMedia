@@ -36,8 +36,8 @@ class MediaDevice {
         this.openScan()
     }
     openScan () {
-        const width = this.transtion(this.$width)
-        const height = this.transtion(this.$height)
+        const width = this.transtion(this.$height)
+        const height = this.transtion(this.$width)
         const videoParam = {
             audio: false,
             video: {
