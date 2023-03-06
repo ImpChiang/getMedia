@@ -31,7 +31,7 @@ class MediaDevice {
         const mediaEleBox = document.createElement('div')
         this.$ele.append(mediaEleBox)
         mediaEleBox.append(this.video)
-        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;position:fixed;top:0,background:aqua;`
+        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;position:fixed;top:0;background:aqua;`
         // this.mediaCameraCanvas()
         this.openScan()
     }
@@ -91,7 +91,7 @@ class MediaDevice {
         this.openScan()
     }
     transtion(number) {
-        return number * 1
+        return number * 2
     }
 }
 
