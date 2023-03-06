@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import mediaDevices from "../utils/media-service";
+// import mediaDevices from "../utils/media-service";
 export default {
   data () {
     return {
@@ -28,14 +28,14 @@ export default {
     }
   },
   mounted () {
-    // this.initElement()
-    this.$nextTick(() => {
-      const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
-        width: document.documentElement.clientWidth || document.body.clientWidth,
-        height: document.documentElement.clientHeight || document.body.clientHeight
-      })
-      console.log(mediaCamera, 'mediaCamera')
-    })
+    this.initElement()
+    // this.$nextTick(() => {
+    //   const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
+    //     width: document.documentElement.clientWidth || document.body.clientWidth,
+    //     height: document.documentElement.clientHeight || document.body.clientHeight
+    //   })
+    //   console.log(mediaCamera, 'mediaCamera')
+    // })
   },
   methods: {
     initElement () {
@@ -95,7 +95,7 @@ export default {
         this.video.setAttribute('webkit-playsinline', true)
         this.video.play()
         // this.makeWatermark(this.canvas2d)
-
+        console.log(this.video, 'this.video', videoParam)
         this.track = stream.getVideoTracks()[0];
         setTimeout(() => {
           this.isUseTorch = this.track.getCapabilities().torch || null
