@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import mediaDevices from "../utils/media-service";
+// import mediaDevices from "../utils/media-service";
 export default {
   data () {
     return {
@@ -29,13 +29,14 @@ export default {
   },
   mounted () {
     // this.initElement()
-    this.$nextTick(() => {
-      const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
-        width: document.documentElement.clientWidth || document.body.clientWidth,
-        height: document.documentElement.clientHeight || document.body.clientHeight
-      })
-      console.log(mediaCamera, 'mediaCamera')
-    })
+    // this.$nextTick(() => {
+    //   const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
+    //     width: document.documentElement.clientWidth || document.body.clientWidth,
+    //     height: document.documentElement.clientHeight || document.body.clientHeight
+    //   })
+    //   console.log(mediaCamera, 'mediaCamera')
+    // })
+    this.init()
   },
   methods: {
     init () {
