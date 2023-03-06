@@ -29,11 +29,13 @@ export default {
   },
   mounted () {
     // this.initElement()
-    const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
-      width: document.documentElement.clientWidth || document.body.clientWidth,
-      height: document.documentElement.clientHeight || document.body.clientHeight
+    this.$nextTick(() => {
+      const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
+        width: document.documentElement.clientWidth || document.body.clientWidth,
+        height: document.documentElement.clientHeight || document.body.clientHeight
+      })
+      console.log(mediaCamera, 'mediaCamera')
     })
-    console.log(mediaCamera, 'mediaCamera')
   },
   methods: {
     initElement () {
