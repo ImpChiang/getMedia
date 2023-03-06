@@ -36,7 +36,9 @@ export default {
     //   })
     //   console.log(mediaCamera, 'mediaCamera')
     // })
-    this.init()
+    this.$nextTick(() => {
+      this.init()
+    })
   },
   methods: {
     init () {
