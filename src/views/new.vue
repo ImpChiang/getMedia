@@ -28,7 +28,7 @@ export default {
     }
   },
   mounted () {
-    // this.initElement()
+    this.initElement()
     // this.$nextTick(() => {
     //   const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
     //     width: document.documentElement.clientWidth || document.body.clientWidth,
@@ -36,7 +36,7 @@ export default {
     //   })
     //   console.log(mediaCamera, 'mediaCamera')
     // })
-    this.init()
+    // this.init()
   },
   methods: {
     init () {
