@@ -1,8 +1,8 @@
 <template>
   <div class="media-wrap">
-<!--    <div class="canvasBox"></div>-->
-<!--    <img class="camera-img" :src="userimg" alt="">-->
-<!--    <button class="camera-btn" @click="takePhoto">拍照</button>-->
+    <div class="canvasBox"></div>
+    <img class="camera-img" :src="userimg" alt="">
+    <button class="camera-btn" @click="takePhoto">拍照</button>
   </div>
 </template>
 
