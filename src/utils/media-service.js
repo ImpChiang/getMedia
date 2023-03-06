@@ -9,6 +9,7 @@ const mediaDevices = function (element, options) {
 
 class MediaDevice {
     constructor (cfg) {
+        console.log(cfg, 'constructor---cfg')
         this.parse(cfg)
     }
     parse (cfg) {
@@ -29,7 +30,7 @@ class MediaDevice {
         video.width = this.$width
         video.height = this.$height
         this.video = video
-        mediaEleBox.append(this.video)
+        mediaEleBox.append(video)
         mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;`
         this.$ele.append(mediaEleBox)
         this.mediaCameraCanvas()
