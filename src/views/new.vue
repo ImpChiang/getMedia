@@ -3,6 +3,7 @@
     <div class="canvasBox"></div>
     <img class="camera-img" :src="userimg" alt="">
     <button class="camera-btn" @click="takePhoto">拍照</button>
+    <button class="camera-btn" @click="changeCamera">切换</button>
   </div>
 </template>
 
@@ -25,6 +26,7 @@ export default {
       exact: 'environment',// environment 后摄像头  user 前摄像头
       watermark: [],
       isUse: false,
+      mediaCamera: null
     }
   },
   mounted () {
@@ -34,6 +36,7 @@ export default {
         width: document.documentElement.clientWidth || document.body.clientWidth,
         height: document.documentElement.clientHeight || document.body.clientHeight
       })
+      this.mediaCamera = mediaCamera
       console.log(mediaCamera, 'mediaCamera')
     })
     // this.init()
@@ -132,8 +135,13 @@ export default {
       }
     },
     takePhoto () {
-      this.cameraCanvas2d.drawImage(this.video, 0, 0, this.windowWidth, this.windowHeight)
-      this.userimg = this.cameraCanvas.toDataURL('image/png')
+      const photoImg = this.mediaCamera.getMediaData()
+      this.userimg = photoImg
+      // this.cameraCanvas2d.drawImage(this.video, 0, 0, this.windowWidth, this.windowHeight)
+      // this.userimg = this.cameraCanvas.toDataURL('image/png')
+    },
+    changeCamera () {
+      this.mediaCamera.changeCamera()
     }
   }
 }

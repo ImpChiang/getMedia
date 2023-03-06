@@ -32,7 +32,7 @@ class MediaDevice {
         this.$ele.append(mediaEleBox)
         mediaEleBox.append(this.video)
         mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;position:fixed;top:0;background:aqua;`
-        // this.mediaCameraCanvas()
+        this.mediaCameraCanvas()
         this.openScan()
     }
     openScan () {
