@@ -19,6 +19,7 @@ class MediaDevice {
         this.init()
     }
     init () {
+        console.log(this.$width, 'this.$width', this.$height)
         const mediaEleBox = document.createElement('div')
         this.video = this.mediaVideo()
         mediaEleBox.append(this.video)
