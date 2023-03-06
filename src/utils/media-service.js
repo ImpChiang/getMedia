@@ -10,19 +10,19 @@ const mediaDevices = function (element, options) {
 class MediaDevice {
     constructor (cfg) {
         console.log(cfg, 'constructor---cfg')
+        this.video = null
         this.parse(cfg)
     }
     parse (cfg) {
         this.$ele = cfg.element || null
-        this.$width = parseInt(cfg.width) ?? (document.documentElement.clientWidth || document.body.clientWidth)
-        this.$height = parseInt(cfg.height) ?? (document.documentElement.clientHeight || document.body.clientHeight)
+        this.$width = cfg.width
+        this.$height = cfg.height
         this.$exact = cfg.exact ?? 'environment'
         this.init()
     }
     init () {
         console.log(this.$width, 'this.$width', this.$height)
         this.mediaVideo()
-
     }
     mediaVideo () {
         this.video = document.createElement('video')
@@ -86,7 +86,7 @@ class MediaDevice {
         this.openScan()
     }
     transtion(number) {
-        return number * 2
+        return number * 1
     }
 }
 

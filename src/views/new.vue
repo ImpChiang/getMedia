@@ -1,13 +1,13 @@
 <template>
   <div class="media-wrap">
-    <div class="canvasBox"></div>
-    <img class="camera-img" :src="userimg" alt="">
-    <button class="camera-btn" @click="takePhoto">拍照</button>
+<!--    <div class="canvasBox"></div>-->
+<!--    <img class="camera-img" :src="userimg" alt="">-->
+<!--    <button class="camera-btn" @click="takePhoto">拍照</button>-->
   </div>
 </template>
 
 <script>
-// import mediaDevices from "../utils/media-service";
+import mediaDevices from "../utils/media-service";
 export default {
   data () {
     return {
@@ -28,14 +28,14 @@ export default {
     }
   },
   mounted () {
-    this.initElement()
-    // this.$nextTick(() => {
-    //   const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
-    //     width: document.documentElement.clientWidth || document.body.clientWidth,
-    //     height: document.documentElement.clientHeight || document.body.clientHeight
-    //   })
-    //   console.log(mediaCamera, 'mediaCamera')
-    // })
+    // this.initElement()
+    this.$nextTick(() => {
+      const mediaCamera = mediaDevices(document.querySelector('.media-wrap'), {
+        width: document.documentElement.clientWidth || document.body.clientWidth,
+        height: document.documentElement.clientHeight || document.body.clientHeight
+      })
+      console.log(mediaCamera, 'mediaCamera')
+    })
   },
   methods: {
     initElement () {
