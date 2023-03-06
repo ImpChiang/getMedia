@@ -21,28 +21,30 @@ class MediaDevice {
     }
     init () {
         console.log(this.$width, 'this.$width', this.$height)
-        const mediaEleBox = document.createElement('div')
-        this.mediaVideo(mediaEleBox)
+        this.mediaVideo()
 
     }
-    mediaVideo (mediaEleBox) {
+    mediaVideo () {
         const video = document.createElement('video')
         video.width = this.$width
         video.height = this.$height
         this.video = video
+        const mediaEleBox = document.createElement('div')
+        this.$ele.append(mediaEleBox)
         mediaEleBox.append(video)
         mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;`
-        this.$ele.append(mediaEleBox)
-        this.mediaCameraCanvas()
+        // this.mediaCameraCanvas()
         this.openScan()
     }
     openScan () {
+        const width = this.transtion(this.$width)
+        const height = this.transtion(this.$height)
         const videoParam = {
             audio: false,
             video: {
                 facingMode: { exact: this.$exact },
-                width: this.$width,
-                height: this.$height
+                width,
+                height
             }
         }
         navigator.mediaDevices.getUserMedia(videoParam).then((stream) => {
@@ -82,6 +84,9 @@ class MediaDevice {
             this.closeCamera()
         }
         this.openScan()
+    }
+    transtion(number) {
+        return number * 1
     }
 }
 
