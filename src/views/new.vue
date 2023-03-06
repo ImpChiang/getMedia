@@ -38,6 +38,19 @@ export default {
     })
   },
   methods: {
+    init () {
+      this.$width = document.documentElement.clientWidth || document.body.clientWidth
+      this.$height = document.documentElement.clientHeight || document.body.clientHeight
+      this.video = document.createElement('video')
+      this.video.width = this.$width
+      this.video.height = this.$height
+      const mediaEleBox = document.createElement('div')
+      document.querySelector('.media-wrap').append(mediaEleBox)
+      mediaEleBox.append(this.video)
+      mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;position:fixed;top:0;background:aqua;`
+      // this.mediaCameraCanvas()
+      this.openScan()
+    },
     initElement () {
       this.windowWidth = document.documentElement.clientWidth || document.body.clientWidth
       this.windowHeight = document.documentElement.clientHeight || document.body.clientHeight
