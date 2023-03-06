@@ -73,7 +73,7 @@ class MediaDevice {
         const data = this.cameraCanvas.toDataURL('image/png') // 默认base64格式
         return data
     }
-    changeCamera (exact) {
+    changeCamera () {
         this.$exact = this.$exact === 'user' ? 'environment':'user'
         if (this.currentStream) {
             this.closeCamera()
