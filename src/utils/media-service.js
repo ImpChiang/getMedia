@@ -52,12 +52,7 @@ class MediaDevice {
             this.video.setAttribute('playsinline', true)
             this.video.setAttribute('webkit-playsinline', true)
             this.video.play()
-
-            this.track = stream.getVideoTracks()[0];
-            const _ = this
-            setTimeout(() => {
-                _.isUseTorch = _.track.getCapabilities().torch || null
-            }, 500)
+            console.log(this.video, 'this.video', videoParam)
         }).catch(() => {
             throw new Error(`not support`);
         })
