@@ -25,14 +25,13 @@ class MediaDevice {
 
     }
     mediaVideo () {
-        const video = document.createElement('video')
-        video.width = this.$width
-        video.height = this.$height
-        this.video = video
+        this.video = document.createElement('video')
+        this.video.width = this.$width
+        this.video.height = this.$height
         const mediaEleBox = document.createElement('div')
         this.$ele.append(mediaEleBox)
-        mediaEleBox.append(video)
-        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;position:fixed;top:0`
+        mediaEleBox.append(this.video)
+        mediaEleBox.style = `width:${this.$width}px;height:${this.$height}px;position:fixed;top:0,background:aqua;`
         // this.mediaCameraCanvas()
         this.openScan()
     }
